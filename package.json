@@ -1,0 +1,22 @@
+{
+  "name": "asciist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "canvas": "^1.6.11",
+    "d3": "^5.1.0",
+    "pngjs": "^3.3.3",
+    "sharp": "^0.20.1",
+    "yargs": "^11.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "asciize": "./index.js"
+  },
+  "author": "John West",
+  "license": "MIT"
+}
