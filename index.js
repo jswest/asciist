@@ -65,12 +65,15 @@ sharp(inputPath)
 			}
 			output += '\n';
 		}
-		if (args.save_image) {
+		if (args.save_as_image) {
 			const outputValues = output.split('\n');
 			const width = 9.5 * outputValues[0].length;
 			const height = 20 * outputValues.length;
 			const canvas = createCanvas(width, height);
 			const context = canvas.getContext('2d');
+
+			context.fillStyle = '#ffffff';
+			context.fillRect(0, 0, width, height);
 
 			context.font = '16px/16px Menlo';
 			for (let x = 0; x < outputValues.length; x++) {
