@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "canvas": "^1.6.11",
+    "canvas": "^2.0.0-alpha.12",
     "d3": "^5.1.0",
     "pngjs": "^3.3.3",
     "sharp": "^0.20.1",
