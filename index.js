@@ -11,7 +11,7 @@ const yargs = require("yargs");
 
 const args = yargs.argv;
 const standardChars = [" ", "░", "▒", "▓", "█"];
-const letterChars = [" ", "l", "o", "E", "N"];
+const elonChars = [" ", "l", "o", "E", "N"];
 
 const inputPath =
 	args.input[0] === "/" ? args.input : path.join(process.cwd(), args.input);
@@ -20,7 +20,7 @@ const outputPath =
 		? args.output
 		: path.join(process.cwd(), args.output);
 
-let chars = args.character_set === "letters" ? letterChars : standardChars;
+let chars = args.character_set === "elon" ? elonChars : standardChars;
 
 if (args.invert) {
 	chars.reverse();
