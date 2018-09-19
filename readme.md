@@ -2,17 +2,30 @@
 
 ## Installation
 
+-   Install Imagemagick first.
 -   Run `npm install`.
 -   Run `npm link`.
 
-## Running it
+## Command-line use
 
--   Run `asciize --input=path/to/file --output=path/to/file`.
+These tools can be used on the command line. Check it out.
 
-### Options
+### Running the asciizer
 
--   You can save as an image with `--save_as_image=true`. Defaults to saving as a .txt file.
--   You can change the width (in chars) with `--size=<some number>`. Defaults to 100 characters wide.
--   You can invert the color with `--invert=true`. Defaults to not inverted.
--   You can log the image to console withh `--log=true`. Defaults to no logging.
--   You can use an alternate characters set--only made up of the letters in 'Elon'--with `--character_set=elon`.
+-   Run `asciize --input=path/to/file --output=path/to/file.png`.
+-   With `--save_as_image=true` to save it as a .png file instead of as a .txt file.
+-   With `--size=<int>` to save adjust the width in characters of the output file. It defaults to 100 characters.
+-   With `--invert=true` to invert the grayscaled image.
+-   With `--log=<1 or 2>` to change the level of logging.
+
+### Running the degrader
+
+-   Run `degrade --input=path/to/file --output=path/to/file.gif`.
+-   With `--incriment=<some number>` to change how quickly the image degrades.
+-   With `--max_pixel_size=<some number>` to resize the image before you degrade.
+-   With `--min_size=<some number>` to set the width in characters of the last frame.
+-   It includes the options of `--size` and `--log` from the asciizer.
+
+## Programmatic use
+
+`const { Asciize, Degradr } = require('asciist');`
