@@ -6,12 +6,14 @@
   "dependencies": {
     "canvas": "^2.0.0-alpha.12",
     "d3": "^5.1.0",
+    "gm": "^1.23.1",
     "pngjs": "^3.3.3",
     "sharp": "^0.20.1",
     "yargs": "^11.0.0"
   },
   "bin": {
-    "asciize": "./index.js"
+    "asciize": "./asciize.js",
+    "degrade": "./degrade.js"
   },
   "author": "John West",
   "license": "MIT"
