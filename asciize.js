@@ -4,24 +4,21 @@ const path = require("path");
 
 const yargs = require("yargs");
 
-const args = yargs.argv;
+const argv = yargs.argv;
 
 const Asciist = require("./lib/Asciist");
 
-const asciist = new Asciist();
-asciist.run({
-	charset: args.chars ? args.chars.split(",") : null,
-	logLevel: args.log,
-	inputFilePath:
-		args.input[0] === "/"
-			? args.input
-			: path.join(process.cwd(), args.input),
-	incriment: args.incriment || 50,
-	invert: args.invert,
+const input = argv._[0];
+const output = argv._[1];
+
+const asciist = new Asciist({
+	chars: argv.chars ? argv.chars.split(",") : null,
+	inputFilePath: input[0] === "/" ? input : path.join(process.cwd(), input),
+	invert: argv.invert,
+	maxAsciiSize: argv.size || 100,
+	maxFinalImageSize: argv.image_size || 500,
 	outputFilePath:
-		args.output[0] === "/"
-			? args.output
-			: path.join(process.cwd(), args.output),
-	shouldSaveAsImage: args.save_as_image,
-	size: args.size || 100
+		output[0] === "/" ? output : path.join(process.cwd(), output),
+	saveAsImage: !argv.save_as_text
 });
+asciist.run();
