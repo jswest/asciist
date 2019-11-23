@@ -13,6 +13,7 @@ const output = argv._[1];
 
 const asciist = new Asciist({
 	chars: argv.chars ? argv.chars.split(",") : null,
+	color: argv.color || "black",
 	inputFilePath: input[0] === "/" ? input : path.join(process.cwd(), input),
 	invert: argv.invert,
 	maxAsciiSize: argv.size || 100,

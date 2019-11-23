@@ -52,5 +52,8 @@ degradr.run({
 				3,
 				2,
 				1
-		  ]
+		  ],
+	colorRange: args.color_range
+		? args.color_range.split(",")
+		: ["black", "black"]
 });
